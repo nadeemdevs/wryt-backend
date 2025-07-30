@@ -16,7 +16,6 @@ export class AuthController {
   }
 
   @Post('login')
-  @UseGuards(Authorize)
   login(@Body() body: { email: string; password: string }) {
     const response = this.authService.login(body);
     return response;
